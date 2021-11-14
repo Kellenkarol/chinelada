@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Chinela
+  - Tile
   layers:
   - Default
   - TransparentFX
@@ -11,20 +13,20 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Bed
+  - Chinela
+  - Wall
+  - ChinelaPesada
+  - ChinelaMetal
+  - ChinelaFoguete
+  - ChinelaNormal
+  - "Im\xE3"
+  - TileMagnetismo
+  - TileInverteForca
+  - TileQuebradico
+  - TileMovimenta
+  - TileFechaComporta
+  - TileNormal
   - 
   - 
   - 

@@ -1,0 +1,13 @@
+{
+	"Conquista teste 1" :	
+	{
+		"Descricao" : ["Atirar x vezes a chinela normal"],
+		"Niveis" : ["5","50","100"] 
+	},
+
+	"Conquista teste 2" :	
+	{
+		"Descricao" : ["Atirar x vezes a chinela pesada"],
+		"Niveis" : ["5","50","100"] 
+	}
+}
