@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System.IO;
 
 public class CreateScene : MonoBehaviour
@@ -12,6 +13,8 @@ public class CreateScene : MonoBehaviour
 	public ShotsCount shotsCount;
 	public TimeCount timeCount;
 	public ChinelaControle chinelaControle;
+    public Image displayChinelaSelected;
+
 	// public GameObject ChinelaNormal, ChinelaPesada, ChinelaFoguete, ChinelaMetal;
 
 	private int currentSceneLevel;
@@ -19,12 +22,15 @@ public class CreateScene : MonoBehaviour
 	private Dictionary<string, GameObject> Chinelas = new Dictionary<string, GameObject>();
     private string[] exceptChinelas = {"ChinelaFoguete", "ChinelaPesada"}; // chinelas que precisam atributos a mais
     private int IndexOfChinelaOnTop;
+    private Sprite[] chinelasImages; // textura das chinelas  -  Resources > ChinelasImages
+
 
     // Start is called before the first frame update
     void Start()
     {
         
     	GameObject[] chinelas = Resources.LoadAll<GameObject>("Chinelas");
+        chinelasImages = Resources.LoadAll<Sprite>("ChinelasImages"); //  carrega os sprites
         chinelaControle.CurrentChinelaName = null;
         IndexOfChinelaOnTop = chinelas.Length;
 
@@ -55,7 +61,7 @@ public class CreateScene : MonoBehaviour
     }
 
 
-    // retorna o index na chinela na lista de chinelas
+    // retorna o index da chinela na lista de chinelas
     int GetIndexInLista(string name)
     {
 
@@ -73,6 +79,8 @@ public class CreateScene : MonoBehaviour
     }
 
 
+
+    // desativa todos os gameObejects na 'Chinelas_Lista'
     void DeactivateLista()
     {
         for(int c=1; c<Chinelas_Lista.childCount-1; c++)
@@ -142,6 +150,14 @@ public class CreateScene : MonoBehaviour
         }
 
         SetNameOfCurrentChinelaInChinelaControle(GetNameInListByIndex(IndexOfChinelaOnTop));
+        SetCurrentChinelaSelected(IndexOfChinelaOnTop-1);
+    }
+
+
+    // mostra qual chinela está selecionada
+    public void SetCurrentChinelaSelected(int idx)
+    {
+        displayChinelaSelected.sprite = chinelasImages[idx];
     }
 
 
@@ -154,8 +170,9 @@ public class CreateScene : MonoBehaviour
         
         if(GetIndexInLista(name) < IndexOfChinelaOnTop)
         {
-            IndexOfChinelaOnTop = GetIndexInLista(name);
+            IndexOfChinelaOnTop = GetIndexInLista(name); // salva qual é a chinela mais no topo
         }
+
         // chinelaControle.CurrentChinelaName = chinelaControle.CurrentChinelaName == null ? name:chinelaControle.CurrentChinelaName;
     }
 
