@@ -24,6 +24,7 @@ public class ChinelaControle : MonoBehaviour
 	
 	public Transform spawnPoint;
 	public GameObject buttonShot, buttonGas;
+    public GameObject winDisplay, loseDisplay;
 
 	private  Dictionary<string, GameObject> ChinelasPrefab = new Dictionary<string, GameObject>(){};
 	[HideInInspector] public string CurrentChinelaName; //inicia em 'CreateScene.cs'
@@ -186,7 +187,7 @@ public class ChinelaControle : MonoBehaviour
             CurrentChinela._startPos = spawnPoint.position;
             CurrentChinela.ResetChinela();
         }
-        else if(true) //if win
+        else if(false) //if win
         {
 
         }
@@ -199,9 +200,17 @@ public class ChinelaControle : MonoBehaviour
     }
 
 
-    public void GameOver()
+    private void GameOver()
     {
         print("GameOver");
+        loseDisplay.SetActive(true);
+    }
+
+
+    public void GameWin()
+    {
+        print("GameWin");
+        winDisplay.SetActive(true);
     }
 
     public void Reset()

@@ -19,7 +19,8 @@ public class Loading : MonoBehaviour
     {
         Instance = this;
         currentScene = GetCurrentSceneToLoad();
-        StartCoroutine(LoadYourAsyncScene());
+        if(FirstLoad)
+            StartCoroutine(LoadYourAsyncScene());
         print("currentScene  "+currentScene);
     }
 
@@ -48,7 +49,7 @@ public class Loading : MonoBehaviour
     {
     	// yield return new WaitForSeconds(1f);
 
-        if(GetCurrentSceneToLoad() != 1)
+        // if(GetCurrentSceneToLoad() != 1)
             minTime = 1f; // um tempo mínimo para a tela de load permancer 
 
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(currentScene);

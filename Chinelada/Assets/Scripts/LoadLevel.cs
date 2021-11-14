@@ -19,7 +19,7 @@ public class LoadLevel : MonoBehaviour
 
 	public static LoadLevel Instance;
 	
-	public GameObject LoadPrefab;
+	//public GameObject LoadPrefab; // não é necessário
 
     // Start is called before the first frame update
     void Start()
