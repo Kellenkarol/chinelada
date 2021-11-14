@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8e5876e1af448419de8084663094b7, type: 3}
+  m_Name: Test 3
+  m_EditorClassIdentifier: 
+  AllChinelas:
+  - {fileID: 5877991411486415731, guid: 21e3e0919f44615418e7c776af041573, type: 3}
+  - {fileID: 5877991411486415731, guid: e60b03a28360278439bb468cc4331242, type: 3}
+  - {fileID: 8458025097221829914, guid: 11c6b8a87fee56441b520e3cc064ed06, type: 3}
+  ChinelaNormal: 1
+  ChinelaPesada: 0
+  ChinelaFoguete: 0
+  ChinelaMetal: 0
+  ChinelaPesadaMass: 2
+  MaxGas: 10
+  GasForce: 16.87
+  MassPadrao: 1
+  MaxShot: 4
+  MaxTime: 120
+  MinForce: 100
+  MaxForce: 500
+  ForceIndicatorSpeed: 1.5
+  Tiles: {fileID: 8049009584552562269, guid: 990ecb1b5976a0d4090143e895bc583e, type: 3}
